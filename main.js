@@ -13,9 +13,9 @@ function printGameResult() {
     if (playerScore > computerScore) {
       gameResult = `Final Result : You Win`;
     } else if (playerScore < computerScore) {
-      gameResult = `Final Result : You Lose`;
+      gameResult = `Final Result : You Lose!`;
     } else {
-      gameResult = `Final Result : It's a Draw`;
+      gameResult = `Final Result : It's a Draw!`;
     }
     return gameResult;
   } else {
@@ -56,28 +56,6 @@ function increaseScores(result) {
     computerScore++;
   }
 }
-// get player's choise & print results
-// function handleButtonClick(playerSelection) {
-//   if (countOfRound >= 5) {
-//     return;
-//   }
-//   const computerSelection = getComputerChoice();
-//   const result = playRound(playerSelection, computerSelection);
-//   increaseScores(result);
-//   countOfRound++;
-//   displayScores();
-//   document.querySelector("#final-result").innerHTML = printGameResult();
-// }
-
-// document
-//   .getElementById("paper")
-//   .addEventListener("click", () => handleButtonClick("paper"));
-// document
-//   .getElementById("rock")
-//   .addEventListener("click", () => handleButtonClick("rock"));
-// document
-//   .getElementById("scissors")
-//   .addEventListener("click", () => handleButtonClick("scissors"));
 
 function handleButtonClick(e) {
   if (playerScore === 5 || computerScore === 5) {
@@ -89,9 +67,7 @@ function handleButtonClick(e) {
   increaseScores(result);
   countOfRound++;
   displayScores();
-  document.querySelector(
-    ".comuter-selection"
-  ).innerHTML = `computerSelection: ${computerSelection}`;
+  document.querySelector(".computer").innerHTML = `${computerSelection}`;
   document.querySelector("#final-result").innerHTML = printGameResult();
 }
 
