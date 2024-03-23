@@ -32,6 +32,11 @@
   background-color: rgb(57, 52, 134, 0.6);
   padding: 15px;
 }
+@media (max-width: 768px) {
+  .game .game-header {
+    font-size: 30px;
+  }
+}
 
 /* design result */
 .scores {
@@ -72,9 +77,27 @@
 .scores span {
   font-size: 50px;
 }
+@media (max-width: 768px) {
+  .scores {
+    margin: 30px 0;
+  }
+  .scores .player-text,
+  .computer-text,
+  .round-text {
+    width: 130px;
+    height: 40px;
+    font-size: 20px;
+  }
+  .scores .scores-design {
+    align-items: center;
+    margin: 0 30px;
+  }
+  .scores span {
+    font-size: 30px;
+  }
+}
 /* display choises */
 .show-choices {
-  padding: 15px;
   margin: 15px 30px;
   display: flex;
   justify-content: space-around;
@@ -97,7 +120,14 @@
 .show-choices p {
   font-size: 25px;
 }
-
+@media (max-width: 768px) {
+  .show-choices i {
+    font-size: 70px;
+  }
+  .show-choices p {
+    font-size: 19px;
+  }
+}
 /* button choise */
 .game .buttons-choice {
   margin: auto 200px;
@@ -106,8 +136,15 @@
 .game .buttons-choice h3 {
   color: white;
   font-size: 30px;
-  display: block;
   padding: 15px;
+}
+@media (max-width: 768px) {
+  .game .buttons-choice {
+    margin: auto 50px;
+  }
+  .game .buttons-choice h3 {
+    font-size: 19px;
+  }
 }
 .game .buttons-choice .buttons {
   display: flex;
@@ -129,6 +166,11 @@
   -moz-transition: 0.3s;
   -ms-transition: 0.3s;
   -o-transition: 0.3s;
+}
+@media (max-width: 768px) {
+  .game .buttons-choice .buttons i {
+    padding: 10px;
+    font-size: 50px;  }
 }
 .game .buttons-choice .buttons i:hover {
   background-color: rgb(75, 236, 150);
