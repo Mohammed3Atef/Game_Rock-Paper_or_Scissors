@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+/* design box of game */
+.game {
+  width: 400px;
+  height: 400px;
+  padding: 15px;
+  background-color: rgb(145, 229, 145);
+  border-radius: 15px;
+  top: -50px;
+  left: -50px;
+  transform: translate(50%, 50%);
+  -webkit-transform: translate(50%, 50%);
+  -moz-transform: translate(50%, 50%);
+  -ms-transform: translate(50%, 50%);
+  -o-transform: translate(50%, 50%);
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+}
+/* design game header */
+.game .game-header {
+  text-align: center;
+  color: rgb(20, 15, 15);
+  margin-bottom: 30px;
+  border: 2px solid rgb(6, 161, 32);
+  border-radius: 10px;
+  background-color: rgb(84, 221, 91);
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  padding: 15px;
+}
+/* design result */
+
+.scores {
+  width: 350px;
+  margin: 10px auto;
+  text-align: center;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+.scores div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 40px;
+  background-color: white;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  margin: 0 5px;
+}
+
+.game .buttons {
+  display: flex;
+  justify-content: space-between;
+}
+.game .buttons button {
+  width: 100px;
+  height: 50px;
+  font-size: 20px;
+  border-radius: 10px;
+  border: 2px solid green;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  margin-bottom: 30px;
+}
+.game .buttons button:hover {
+  background-color: rgb(48, 180, 92);
+  color: white;
+  border: 3px dashed rgb(119, 255, 164);
+}
+.comuter-selection {
+  text-align: center;
+  margin-bottom: 15px;
+}
+.result {
+  text-align: center;
+}
+.final-result {
+  color: black;
+  background-color: blue;
+  margin: 15px;
+}
