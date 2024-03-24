@@ -9,13 +9,14 @@ function getComputerChoice() {
 // function to print game result
 function printGameResult() {
   if (playerScore === 5 || computerScore === 5) {
+    document.querySelector(".overlay").style.display = "block";
     let gameResult = "";
     if (playerScore > computerScore) {
-      gameResult = `Final Result : You Win`;
+      gameResult = `You Won`;
     } else if (playerScore < computerScore) {
-      gameResult = `Final Result : You Lose!`;
+      gameResult = `You Lose!`;
     } else {
-      gameResult = `Final Result : It's a Draw!`;
+      gameResult = `It's a Draw!`;
     }
     return gameResult;
   } else {
@@ -76,3 +77,15 @@ document.getElementById("rock").addEventListener("click", handleButtonClick);
 document
   .getElementById("scissors")
   .addEventListener("click", handleButtonClick);
+
+function playAgain() {
+  playerScore = 0;
+  computerScore = 0;
+  countOfRound = 0;
+
+  document.querySelector("#player-score").innerHTML = playerScore;
+  document.querySelector("#computer-score").innerHTML = computerScore;
+  document.querySelector("#round").innerHTML = countOfRound;
+  document.querySelector(".overlay").style.display = "none";
+}
+document.getElementById("play-again").addEventListener("click", playAgain);
