@@ -9,7 +9,7 @@ function getComputerChoice() {
 // function to print game result
 function printGameResult() {
   if (playerScore === 5 || computerScore === 5) {
-    document.querySelector(".overlay").style.display = "block";
+    document.querySelector(".overlay").style.display = "flex";
     let gameResult = "";
     if (playerScore > computerScore) {
       gameResult = `You Won`;
@@ -57,19 +57,41 @@ function increaseScores(result) {
     computerScore++;
   }
 }
-
+function changePlayerChoice(playerSelection) {
+  const playerChoice = document.querySelector(".player");
+  if (playerSelection === "paper") {
+    playerChoice.innerHTML = `<i class="fa-regular fa-hand " id="paper" choice="paper"></i>`;
+  } else if (playerSelection === "rock") {
+    playerChoice.innerHTML = `<i class="fa-regular fa-hand-back-fist " id="rock" choice="rock"></i>`;
+  } else if (playerSelection === "scissors") {
+    playerChoice.innerHTML = `<i class="fa-solid fa-hand-peace " id="scissors" choice="scissors"></i>`;
+  }
+}
+function changeComputerChoice(computerSelection) {
+  const computerChoice = document.querySelector(".computer");
+  if (computerSelection === "paper") {
+    computerChoice.innerHTML = `<i class="fa-regular fa-hand " id="paper" choice="paper"></i>`;
+  } else if (computerSelection === "rock") {
+    computerChoice.innerHTML = `<i class="fa-regular fa-hand-back-fist " id="rock" choice="rock"></i>`;
+  } else if (computerSelection === "scissors") {
+    computerChoice.innerHTML = `<i class="fa-solid fa-hand-peace " id="scissors" choice="scissors"></i>`;
+  }
+}
 function handleButtonClick(e) {
   if (playerScore === 5 || computerScore === 5) {
     return;
   }
   const playerSelection = e.target.getAttribute("choice");
   const computerSelection = getComputerChoice();
+  changePlayerChoice(playerSelection);
+  changeComputerChoice(computerSelection);
   const result = playRound(playerSelection, computerSelection);
   increaseScores(result);
   countOfRound++;
   displayScores();
-  document.querySelector(".computer").innerHTML = `${computerSelection}`;
   document.querySelector("#final-result").innerHTML = printGameResult();
+
+  // document.querySelector(".computer").innerHTML = computerSelection;
 }
 
 document.getElementById("paper").addEventListener("click", handleButtonClick);
@@ -77,15 +99,28 @@ document.getElementById("rock").addEventListener("click", handleButtonClick);
 document
   .getElementById("scissors")
   .addEventListener("click", handleButtonClick);
-
+// function displayNone() {
+//   document.querySelector(".overlay").style.display = "none";
+// }
 function playAgain() {
   playerScore = 0;
   computerScore = 0;
   countOfRound = 0;
+  // document.querySelector(".message").style.animation = "popupOut 400ms ease-in";
+  document.querySelector(".overlay").style.display = "none";
 
+  // setTimeout(() => {
+  //   displayNone();
+  // }, 900);
   document.querySelector("#player-score").innerHTML = playerScore;
   document.querySelector("#computer-score").innerHTML = computerScore;
   document.querySelector("#round").innerHTML = countOfRound;
-  document.querySelector(".overlay").style.display = "none";
+
+  document.querySelector(
+    ".computer"
+  ).innerHTML = `<i class="fa-solid fa-question " ></i>`;
+  document.querySelector(
+    ".player"
+  ).innerHTML = `<i class="fa-solid fa-question " ></i>`;
 }
 document.getElementById("play-again").addEventListener("click", playAgain);
