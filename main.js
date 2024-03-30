@@ -1,11 +1,17 @@
+// audio
+function playAudio() {
+  let music = document.querySelector("#game-audio");
+  music.play();
+}
+
 // get player name
 function getPlayerName() {
   let value = document.querySelector("#player-name").value;
   console.log(value);
   document.querySelector(".player-text").textContent = value;
   document.querySelector(".container-user-name").style.display = "none";
+  playAudio();
 }
-// document.getElementById("#start-play").addEventListener("click", getPlayerName);
 
 // get computer's choice
 function getComputerChoice() {
