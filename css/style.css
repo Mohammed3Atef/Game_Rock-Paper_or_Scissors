@@ -3,13 +3,88 @@
   box-sizing: border-box;
 }
 /* design box of game */
-.game {
-  height: 100vh;
+body {
+  position: relative;
+}
+.game-container {
   background-image: url(../imgs/backgroundGame.jpg);
   background-size: cover;
   position: relative;
   z-index: 1;
+}
+
+/* get player name */
+.container-user-name {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(3, 3, 3, 0.795);
+  top: 0;
+  left: 0;
+  z-index: 1;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.message-start-play {
+  padding: 20px;
+  width: 300px;
+  height: 200px;
+  background-color: #eee;
   text-align: center;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  font-size: 20px;
+  box-shadow: 0px 0px 100px 7px #cdd3d596;
+  animation: popupIn 400ms ease-in;
+  -webkit-animation: popupIn 400ms ease-in;
+}
+@keyframes popupIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+.message-start-play #player-name {
+  padding: 10px;
+  margin: 15px 0;
+}
+#start-play {
+  margin-top: 10px;
+  padding: 15px 10px;
+  width: 100px;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  background-color: rgb(146 123 229 / 36%);
+  color: rgb(0 0 0);
+  font-weight: bold;
+  border: 3px solid rgb(170 148 249);
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+}
+
+#start-play:hover {
+  background-color: rgb(55 113 245 / 74%);
+  border: 3px solid rgb(121 185 231);
+  transform: scale(110%);
+  color: white;
+  -webkit-transform: scale(110%);
+}
+/* get player name */
+
+.game {
+  min-height: 100vh;
+  max-width: 500px;
+  margin: auto;
 }
 .game::before {
   content: "";
@@ -28,7 +103,10 @@
   text-align: center;
   color: rgb(49, 53, 246);
   margin-bottom: 30px;
-  border-bottom: 2px solid rgb(51, 8, 206);
+  border: 2px solid rgb(51, 8, 206);
+  border-top: none;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
   background-color: rgb(57, 52, 134, 0.6);
   padding: 15px;
 }
@@ -53,11 +131,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 200px;
-  height: 80px;
+  width: 100px;
+  height: 50px;
   color: white;
   background-color: rgba(84, 43, 233, 0.233);
-  font-size: 30px;
+  font-size: 18px;
   font-weight: bold;
   border: 2px solid rgb(51, 8, 206);
   border-radius: 10px;
@@ -65,17 +143,18 @@
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
-  margin: 0 5px;
+  /* margin: 0 0 5px 0; */
 }
 .scores .scores-design {
   color: white;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   flex: 1;
-  margin: 0 100px;
+  margin: 0 50px;
 }
 .scores span {
-  font-size: 50px;
+  font-size: 30px;
 }
 @media (max-width: 768px) {
   .scores {
@@ -98,17 +177,20 @@
 }
 /* display choises */
 .show-choices {
-  margin: 15px 30px;
   display: flex;
   justify-content: space-around;
-  color: rgb(197, 196, 196);
+  align-items: center;
+  color: #c5c4c4;
   text-align: center;
+}
+.show-choices span {
+  font-size: 20px;
+  font-weight: bold;
 }
 .show-choices i {
   background-color: rgba(84, 43, 233, 0.233);
   padding: 20px;
   margin-bottom: 5px;
-  font-size: 150px;
   color: rgb(83, 86, 255);
   border: 2px solid rgb(51, 8, 206);
   border-radius: 5px;
@@ -128,7 +210,7 @@
   border: 2px dashed rgb(0, 133, 62);
 }
 .show-choices p {
-  font-size: 25px;
+  font-size: 18px;
 }
 @media (max-width: 768px) {
   .show-choices i {
@@ -140,8 +222,8 @@
 }
 /* button choise */
 .game .buttons-choice {
-  margin: auto 200px;
   text-align: center;
+  margin-top: 15px;
 }
 .game .buttons-choice h3 {
   color: white;
@@ -218,7 +300,7 @@
   left: 0;
   z-index: 1;
   position: absolute;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
 }
@@ -237,8 +319,6 @@
   font-size: 30px;
   box-shadow: 0px 0px 100px 7px #00d0ff96;
   animation: popupIn 400ms ease-in;
-  /*animation-name: popupOut;
-  */
   -webkit-animation: popupIn 400ms ease-in;
 }
 @keyframes popupIn {
@@ -249,14 +329,7 @@
     opacity: 100%;
   }
 }
-@keyframes popupOut {
-  from {
-    background-color: black;
-  }
-  to {
-    background-color: red;
-  }
-}
+
 #final-result {
   font-size: 15px;
   padding: 15px;
@@ -291,8 +364,8 @@
 }
 
 #play-again:hover {
-  background-color: red;
-  border: 3px solid green;
+  background-color: rgba(255, 0, 0, 0.739);
+  border: 3px solid rgb(71, 246, 71);
   transform: scale(110%);
   -webkit-transform: scale(110%);
   -moz-transform: scale(110%);

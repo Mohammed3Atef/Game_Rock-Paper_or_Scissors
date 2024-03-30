@@ -12,53 +12,67 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="game">
-    <h2 class="game-header">Rock Paper Scissors</h2>
-    <div class="round-text">Round: <span id="round">`0`</span></div>
-    <div class="scores">
-      <div class="player-text">You </div>
-      <div class="scores-design">
-        <span id="player-score">0</span>
-        <span>-</span>
-        <span id="computer-score">0</span>
-      </div>
-      <div class="computer-text">Computer </div>
-    </div>
-    <div class="show-choices">
-      <div class="plalyer-choice">
-        <div class="player">
-          <i class="fa-solid fa-question " ></i>
-        </div>
-        <p>Your Choice</p>
-      </div>
-      <div class="computer-choice">
-        <div class="computer">
-          <i class="fa-solid fa-question " ></i>
-        </div>
-        <p>Computer Choice</p>
-      </div>
-    </div>
-    <div class="buttons-choice">
-      <h3>Chose Your Weapon</h3>
-      <div class="buttons">
-        <i class="fa-regular fa-hand " id="paper" choice="paper"></i>
-        <i class="fa-regular fa-hand-back-fist " id="rock" choice="rock"></i>
-        <i class="fa-solid fa-hand-peace " id="scissors" choice="scissors"></i>
-      </div>
-    </div>
+  <div class="game-container">
 
-    <div class="comuter-selection"></div>
-
-    <div class="overlay">
-      <div class="message">
-        Final Result
-        <div id="final-result"></div>
-        <button id="play-again">Play Again</button>
-      </div>
-    </div>
     
-    <!-- <audio src="/audio/game_audio.mp3" controls autoplay></audio> -->
+
+    <div class="game">
+      <div class="container-user-name">
+        <div class="message-start-play">
+          Enter You Name
+          <input type="text" placeholder="User Name" id="player-name">
+          <button id="start-play"  onclick="getPlayerName()">Start Play </button>
+        </div>
+      </div>
+      <h2 class="game-header">Rock Paper Scissors</h2>
+      <div class="round-text">Round: <span id="round">`0`</span></div>
+      <div class="scores">
+        <div class="player-text"></div>
+        <div class="scores-design">
+          <span id="player-score">0</span>
+          <span>-</span>
+          <span id="computer-score">0</span>
+        </div>
+        <div class="computer-text">Computer </div>
+      </div>
+      <div class="show-choices">
+        <div class="plalyer-choice">
+          <div class="player">
+            <i class="fa-solid fa-question " ></i>
+          </div>
+          <p>Your Choice</p>
+        </div>
+        <span>VS</span>
+        <div class="computer-choice">
+          <div class="computer">
+            <i class="fa-solid fa-question " ></i>
+          </div>
+          <p>Computer Choice</p>
+        </div>
+      </div>
+      <div class="buttons-choice">
+        <h3>Chose Your Weapon</h3>
+        <div class="buttons">
+          <i class="fa-regular fa-hand " id="paper" choice="paper"></i>
+          <i class="fa-regular fa-hand-back-fist " id="rock" choice="rock"></i>
+          <i class="fa-solid fa-hand-peace " id="scissors" choice="scissors"></i>
+        </div>
+      </div>
+  
+      <div class="comuter-selection"></div>
+  
+      <div class="overlay">
+        <div class="message">
+          Final Result
+          <div id="final-result"></div>
+          <button id="play-again">Play Again</button>
+        </div>
+      
+      
+      <audio src="/audio/game_audio.mp3" controls autoplay></audio>
+    </div>
   </div>
+  
   
   
   <script src="main.js"></script>

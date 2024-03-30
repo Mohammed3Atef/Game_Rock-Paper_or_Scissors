@@ -1,3 +1,12 @@
+// get player name
+function getPlayerName() {
+  let value = document.querySelector("#player-name").value;
+  console.log(value);
+  document.querySelector(".player-text").textContent = value;
+  document.querySelector(".container-user-name").style.display = "none";
+}
+// document.getElementById("#start-play").addEventListener("click", getPlayerName);
+
 // get computer's choice
 function getComputerChoice() {
   const choices = ["rock", "paper", "scissors"];
@@ -40,8 +49,12 @@ function playRound(playerSelection, computerSelection) {
     (playerSelection === "paper" && computerSelection === "scissors") ||
     (playerSelection === "scissors" && computerSelection === "rock")
   ) {
+    document.querySelector(".player i").style.cssText =
+      "color:white; background-color:red;   border: none;";
     return "You Lose";
   } else {
+    document.querySelector(".computer i").style.cssText =
+      "color:white; background-color:red; border: none;";
     return "You Win";
   }
 }
@@ -79,6 +92,7 @@ function changeComputerChoice(computerSelection) {
 }
 function handleButtonClick(e) {
   if (playerScore === 5 || computerScore === 5) {
+    document.querySelector(".overlay").style.display = "flex";
     return;
   }
   const playerSelection = e.target.getAttribute("choice");
@@ -99,19 +113,12 @@ document.getElementById("rock").addEventListener("click", handleButtonClick);
 document
   .getElementById("scissors")
   .addEventListener("click", handleButtonClick);
-// function displayNone() {
-//   document.querySelector(".overlay").style.display = "none";
-// }
+
 function playAgain() {
   playerScore = 0;
   computerScore = 0;
   countOfRound = 0;
-  // document.querySelector(".message").style.animation = "popupOut 400ms ease-in";
   document.querySelector(".overlay").style.display = "none";
-
-  // setTimeout(() => {
-  //   displayNone();
-  // }, 900);
   document.querySelector("#player-score").innerHTML = playerScore;
   document.querySelector("#computer-score").innerHTML = computerScore;
   document.querySelector("#round").innerHTML = countOfRound;
