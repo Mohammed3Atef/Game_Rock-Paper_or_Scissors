@@ -54,9 +54,14 @@ body {
 .message-start-play #player-name {
   padding: 10px;
   margin: 15px 0;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #2382f7;
+  background-color: #eeeeee;
+  text-align: center;
 }
-#start-play {
-  margin-top: 10px;
+#start-game {
+  margin-top: 30px;
   padding: 15px 10px;
   width: 100px;
   border-radius: 15px;
@@ -72,7 +77,7 @@ body {
   -webkit-transition: 0.3s;
 }
 
-#start-play:hover {
+#start-game:hover {
   background-color: rgb(55 113 245 / 74%);
   border: 3px solid rgb(121 185 231);
   transform: scale(110%);
@@ -372,4 +377,3 @@ body {
   -ms-transform: scale(110%);
   -o-transform: scale(110%);
 }
-

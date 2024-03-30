@@ -6,10 +6,15 @@ function playAudio() {
 
 // get player name
 function getPlayerName() {
-  let value = document.querySelector("#player-name").value;
-  console.log(value);
-  document.querySelector(".player-text").textContent = value;
-  document.querySelector(".container-user-name").style.display = "none";
+  let userName = "";
+  userName = document.querySelector("#player-name").value;
+  document.querySelector(".player-text").textContent = userName;
+  if (userName === "") {
+    document.getElementById("player-name").style.cssText =
+      "background-color:#fd7676a8;   border-bottom:2px solid red;";
+  } else {
+    document.querySelector(".container-user-name").style.display = "none";
+  }
   playAudio();
 }
 
